@@ -1,14 +1,17 @@
-
 'use client';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import React from 'react';
+
+const MotionHeader = motion.header as React.ComponentType<any>;
 
 export default function Navbar() {
   return (
-    <motion.header 
-      initial={{ y: -40, opacity: 0 }} 
-      animate={{ y: 0, opacity: 1, transition: { duration: 0.6, ease: [0.22,1,0.36,1] } }}
-      className="sticky top-0 z-40 bg-white/70 backdrop-blur border-b border-gray-200">
+    <MotionHeader
+      initial={{ y: -40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }}
+      className="sticky top-0 z-40 bg-white/70 backdrop-blur border-b border-gray-200"
+    >
       <div className="section flex h-16 items-center justify-between">
         <Link href="/" className="font-semibold text-lg">
           <span className="hero-accent">PashuDhani®</span>
@@ -23,6 +26,6 @@ export default function Navbar() {
           <a href="#cta" className="btn-primary">Sign Up Free</a>
         </div>
       </div>
-    </motion.header>
+    </MotionHeader>
   );
 }
